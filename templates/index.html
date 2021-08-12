@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
+    <title>Nav bar</title>
+    <script src="https://kit.fontawesome.com/2b23d84205.js" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='main.js')}}" defer></script>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+{% if messages %}
+<script>alert("{{messages[-1]}}")</script>
+{% endif %}
+{% endwith %}
+
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <i class="fas fa-coffee"></i>
+            <a href="">바글바글</a>
+        </div>
+
+     
+        <ul class="navbar__menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Notice</a></li>
+            <li><a href="">Board</a></li>
+        </ul>
+
+
+        <div class="navbar__icons">
+            <li><i class="fas fa-plane"></i></li>
+            <li><i class="far fa-grin-hearts"></i></li>
+        </div>
+
+        <a href="#" class="navbar__toggleBtn">
+            <i class="fas fa-bars"></i>
+        </a>
+
+
+    </nav>
+
+    <div class="content">
+        <div>
+            <h3>바글바글은 바른 글씨를 위한 양식을 제공합니다.</h3>
+            <p>
+                * 글자수는 14글자를 초과할 수 없습니다. 
+                
+            </p>
+        </div>
+        <div>
+            <form action="/result" method="POST">
+                글귀 1 : <input class = "note_form" type="text" name="note_1"><br>
+                글귀 2 : <input class = "note_form" type="text" name="note_2"><br>
+                글귀 3 : <input class = "note_form" type="text" name="note_3"><br>
+                글귀 4 : <input class = "note_form" type="text" name="note_4"><br>
+                <input class = "submit_btn" type="submit" value="출력">
+            </form>
+        </div>
+        
+
+
+    </div>
+
+    <footer>
+
+    </footer>
+
+
+</body>
+</html>
