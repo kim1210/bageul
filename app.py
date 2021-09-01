@@ -57,3 +57,6 @@ def result():
     new_img.save(load)
 
     return send_file(load, attachment_filename='form.png', mimetype='image/png')
+
+if __name__ == '__main__':
+    app.run(debug=True,host='0.0.0.0')
